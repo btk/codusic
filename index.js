@@ -1,22 +1,51 @@
 var fs = require("fs");
 var fetch = require("node-fetch");
+var sget = require("sget");
 const lastfmAPI = "e3d3ffd59eb8600eaf8d8e477f8aacaf";
 
-const limit = 10;
-const userName = "buraktokak";
-const period = "7day";
-let url = `http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${userName}&api_key=${lastfmAPI}&format=json&period=${period}&limit=${limit}`;
+let command = process.argv[2];
+  if(command == "-h"){
+    console.log("Codusic Help; \n");
+  }else if(command == "init" || command == ""){
+    init();
+  }else{
+    console.log(" ! Unknown Command is given for codusic");
+  }
 
-fetch(url).then(function(res) {
-  return res.json();
-}).then(function(json) {
-  let stringToSave = "#Top Tracks Listened While Coding This Project \n";
-  json.toptracks.track.forEach(t => {
-      stringToSave += " - " + t.name + " by " + t.artist.name + "\n";
+function init(){
+  var username = sget('Your Lasfm account username: ');
+  var period = sget('How long have you been working on this project: [overall | 7day | 1month | 3month | 6month | 12month]');
+  if(username && period){
+    username = username.replace("\n", "");
+    period = period.replace("\n", "");
+    if(['overall', '7day', '1month', '3month', '6month', '12month'].includes(period)){
+      console.log(" - Your codusic is now initilized, your top track file is generating...");
+      create(username, period);
+    }else{
+      console.log(" ! Entered time period is not a valid one, please choose by given.");
+      init();
+    }
+  }else{
+    console.log(" ! Do not leave empty label, Try again;");
+    init();
+  }
+}
+
+function create(username, period){
+  const limit = 10;
+  let url = `http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${username}&api_key=${lastfmAPI}&format=json&period=${period}&limit=${limit}`;
+
+  fetch(url).then(function(res) {
+    return res.json();
+  }).then(function(json) {
+    let stringToSave = "#Top Tracks Listened While Coding This Project \n";
+    json.toptracks.track.forEach(t => {
+        stringToSave += " - " + t.name + " by **" + t.artist.name + "**\n";
+    });
+    stringToSave += "\n\n Created by using [Codusic](https://github.com/btk/codusic)";
+    saveFile(stringToSave);
   });
-  stringToSave += "\n\n Created by using [Codusic](https://github.com/btk/codusic)";
-  saveFile(stringToSave);
-});
+}
 
 function saveFile(str){
   fs.writeFile('codusic.md', str, function (err) {

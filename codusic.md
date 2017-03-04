@@ -1,14 +1,14 @@
 #Top Tracks Listened While Coding This Project 
- - 17 Crimes by AFI
- - Alpha by Periphery
- - Aunt Betty by Middle Class Rut
- - Breathe - Metal Version by Leo
- - Disaster Highway by Smash Into Pieces
- - Monster by Starset
- - Delusion by We Are The Catalyst
- - Take Control by Hyperdose
- - Coming for the Throne by Otherwise
- - Help Me (Goreystep Remix) by Little Miss Gorey
+ - Shoot To Thrill by **Halestorm**
+ - The Shade by **Metric**
+ - Caffeine (feat. Lamar Hall) by **Casey Lee Williams**
+ - Don't by **Blind Channel**
+ - War of Change by **Thousand Foot Krutch**
+ - Enter Sandman by **Metallica**
+ - Beast by **Nico Vega**
+ - Shake The Dust by **Asherel**
+ - Taste Of Ashes by **Straight Line Stitch**
+ - Heathens by **Halestorm**
 
 
  Created by using [Codusic](https://github.com/btk/codusic)

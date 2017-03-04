@@ -32,13 +32,7 @@ codusic init
 
 Follow the form and this will create a codusic.json file in your project folder (wherever your are initilizing codusic). It will ask your your **lastfm username** and **how long have you been working on** this project.
 
-Then use this when you are ready;
-
-```
-codusic create
-```
-
-And as mentioned, this command will create a file called codusic.md which contains your popular track list. And link it to your readme.md file.
+Then as mentioned, this command will create a file called codusic.md which contains your popular track list. And link it to your readme.md file.
 
 ## Why?
 
