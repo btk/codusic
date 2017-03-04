@@ -1,6 +1,6 @@
 {
   "name": "codusic",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Generates a list of most listened tracks from beginning of a software project for developers.",
   "bin": {
     "codusic": "index.js"

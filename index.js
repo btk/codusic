@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require("fs");
 var fetch = require("node-fetch");
 var sget = require("sget");
