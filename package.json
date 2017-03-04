@@ -1,0 +1,32 @@
+{
+  "name": "codusic",
+  "version": "1.0.0",
+  "description": "Generates a list of most listened tracks from beginning of a software project for developers.",
+  "bin": {
+    "codusic": "index.js"
+  },
+  "preferGlobal": "true",
+  "main": "index.js",
+  "dependencies": {
+    "node-fetch": "^1.6.3",
+    "sget": "^0.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/btk/codusic.git"
+  },
+  "keywords": [
+    "music",
+    "developer"
+  ],
+  "author": "btk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/btk/codusic/issues"
+  },
+  "homepage": "https://github.com/btk/codusic#readme"
+}
