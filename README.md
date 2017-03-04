@@ -27,7 +27,7 @@ codusic -h
 Initilize your codusic with your lastfm account.
 
 ```
-codusic init
+codusic
 ```
 
 Follow the form and this will create a codusic.json file in your project folder (wherever your are initilizing codusic). It will ask your your **lastfm username** and **how long have you been working on** this project.
