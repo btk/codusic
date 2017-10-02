@@ -17,12 +17,13 @@ let command = process.argv[2];
 function init(){
   var username = sget('Your Lasfm account username: ');
   var period = sget('How long have you been working on this project: [overall | 7day | 1month | 3month | 6month | 12month]');
+  var metric = sget('Top listened: [track | artist]').replace("\n", "") || 'track';  
   if(username && period){
     username = username.replace("\n", "");
     period = period.replace("\n", "");
     if(['overall', '7day', '1month', '3month', '6month', '12month'].includes(period)){
-      console.log(" - Your codusic is now initilized, your top track file is generating...");
-      create(username, period);
+      console.log(` - Your codusic is now initilized, your top ${metric} file is generating...`);
+      create(username, period, metric);
     }else{
       console.log(" ! Entered time period is not a valid one, please choose by given.");
       init();
@@ -33,17 +34,27 @@ function init(){
   }
 }
 
-function create(username, period){
+function create(username, period, metric){
   const limit = 10;
-  let url = `http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${username}&api_key=${lastfmAPI}&format=json&period=${period}&limit=${limit}`;
+  let methodName = 'gettoptracks';
+  if (metric === 'artist') {
+    methodName = 'gettopartists';
+  }
+  let url = `http://ws.audioscrobbler.com/2.0/?method=user.${methodName}&user=${username}&api_key=${lastfmAPI}&format=json&period=${period}&limit=${limit}`;
 
   fetch(url).then(function(res) {
     return res.json();
   }).then(function(json) {
     let stringToSave = "#Top Tracks Listened While Coding This Project \n";
-    json.toptracks.track.forEach(t => {
+    if (metric === 'artist') {
+      json.topartists.artist.forEach(t => {
+          stringToSave += " - " + t.name + "\n";
+      });
+    } else {
+      json.toptracks.track.forEach(t => {
         stringToSave += " - " + t.name + " by **" + t.artist.name + "**\n";
-    });
+      });
+    }
     stringToSave += "\n\n Created by using [Codusic](https://github.com/btk/codusic)";
     saveFile(stringToSave);
   });

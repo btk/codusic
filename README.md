@@ -2,15 +2,15 @@
 
 Generates a list of most listened-to tracks inside your project file by using your Lastfm data.
 
-> PROTIP: To keep the spelling in mind **(code + music = codusic)**
+> PROTIP: Keep spelling in mind **(code + music = codusic)**
 
 ## How does it work?
 
-Lastfm is a platform that works by crawling what you listen to on your PC, phone etc. It is supported by popular listening platforms like Spotify. If you are listening on local, you can also have your Lastfm account hooked up to your favorite music player software.
+LastFM is a platform that works by curating what you listen to on your PC, phone etc. It has support for popular listening platforms like Spotify. If you are listening locally, you can also have your LastFM account hooked to your favorite music player software.
 
-Codusic checks your Lastfm data and generates a .md file in your project - (codusic.md) - and links that file to your README.md file. This way others can see what you listened to while creating your awesome project.
+Codusic checks your LastFM data and generates a .md file in your project (codusic.md) and links that file to your README.md file. This way others can see what you listened to while creating your awesome project.
 
-## Installing & Using
+## Installation & Use
 
 Install global module of codusic.
 
@@ -41,5 +41,9 @@ Then, as mentioned, this command will create a file called codusic.md which cont
 Have you ever wondered which tracks the developer of a project has been listening while coding it? Well, I did.
 
 I was wondering if it would help me to listen to music while coding, and if it is, which genre is the best to listen to while coding. My main goal is to get the information from hundreds of project data and compare the genres with your coding quality. I don't know how to do that for now, but codusic is a starting point for gathering data.
+
+## Working Screenshot
+
+![alt tag](https://github.com/btk/codusic/blob/master/screenshot.png)
 
 [Top Tracks Listened While Coding This Project - Codusic](codusic.md)
