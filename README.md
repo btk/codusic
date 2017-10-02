@@ -43,3 +43,9 @@ Have you ever wondered, which tracks the developer of a project has been listeni
 I was wondering if it is helping me to listen music while coding, and if it is, which genre is the best to listen while coding. My main goal is to luckily get the information of hundreds of project data and compare the genres with your coding quality. I don't know how to do that for now, but codusic is a starting point for gathering data.
 
 [Top Tracks Listened While Coding This Project - Codusic](codusic.md)
+
+## Working Screenshot
+
+
+![alt tag](https://github.com/btk/codusic/blob/master/screenshot.png)
+
