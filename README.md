@@ -10,7 +10,6 @@ LastFM is a platform that works by crawling what you listen to on your pc, phone
 
 Codusic checks your lastfm data and generates a markdown file in your project (codusic.md) and links that file to your README.md file. This way others can see what you listened while creating your awesome project.
 
-
 ## Installation & Use
 
 Install global module of codusic
